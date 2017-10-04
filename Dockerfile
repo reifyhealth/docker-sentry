@@ -85,7 +85,10 @@ COPY config.yml /etc/sentry/
 COPY docker-entrypoint.sh /entrypoint.sh
 
 EXPOSE 9000
+
 VOLUME /var/lib/sentry/files
 
 ENTRYPOINT ["/entrypoint.sh"]
-CMD ["run", "web", "worker"]
+
+# CMD has been moved to the Procfile
+# CMD ["run", "web", "worker"]
