@@ -56,8 +56,8 @@
 # filestore.options:
 #   location: '/tmp/sentry-files'
 
-filestore.backend: 's3'
-filestore.options:
-  access_key: <%= ENV['AWS_ACCESS_KEY_ID'] %>
-  secret_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
-  bucket_name: <%= ENV['AWS_S3_BUCKET_NAME'] %>
+# filestore.backend: 's3'
+# filestore.options:
+#   access_key: ''
+#   secret_key: ''
+#   bucket_name: ''
