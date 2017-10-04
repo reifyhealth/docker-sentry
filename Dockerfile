@@ -1,4 +1,4 @@
-FROM python:2.7.13-slim
+FROM python:2.7.14-slim
 
 # add our user and group first to make sure their IDs get assigned consistently
 RUN groupadd -r sentry && useradd -r -m -g sentry sentry
