@@ -1,0 +1,2 @@
+before_release:
+  - sentry upgrade --noinput
