@@ -1,2 +1,2 @@
 before_release:
-  - sentry upgrade --noinput
+  - sentry help
