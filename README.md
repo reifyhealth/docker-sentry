@@ -10,6 +10,9 @@ These are the modifications that were made to serve our needs.
 
 Setting this up requires setting the following env vars.
 
+**APTIBLE CONFIG**
+* FORCE_SSL - always redirect to SSL connect
+
 **SENTRY SYSTEM CONFIG**
 * SENTRY_PROJECT - your sentry project name
 * SENTRY_USE_SSL - set to TRUE for Sentry to enforce SSL connections
@@ -28,7 +31,7 @@ Setting this up requires setting the following env vars.
 * SENTRY_EMAIL_HOST - email host
 * SENTRY_EMAIL_PASSWORD - email passowrd
 * SENTRY_EMAIL_USER - email user
-* SENTRY_MAILGUN_API_KEY - mailgun api key
+* SENTRY_EMAIL_USE_TLS - whether to use TLS for email
 
 **REDIS**
 * SENTRY_REDIS_HOST - redis host
