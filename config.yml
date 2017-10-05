@@ -45,8 +45,6 @@
 #         host: 127.0.0.1
 #         port: 6379
 
-system.url-prefix: 'https://app-7378.on-aptible.com'
-
 ################
 # File storage #
 ################

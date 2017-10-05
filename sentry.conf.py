@@ -303,6 +303,12 @@ if 'SENTRY_RUNNING_UWSGI' not in os.environ and len(secret_key) < 32:
 
 SENTRY_OPTIONS['system.secret-key'] = secret_key
 
+url_prefix = env('SENTRY_URL_PREFIX')
+if not url_prefix:
+    raise Exception('Error: SENTRY_URL_PREFIX is undefined.')
+
+SENTRY_OPTIONS['system.url-prefix'] = url_prefix
+
 if 'GITHUB_APP_ID' in os.environ:
     GITHUB_EXTENDED_PERMISSIONS = ['repo']
     GITHUB_APP_ID = env('GITHUB_APP_ID')
