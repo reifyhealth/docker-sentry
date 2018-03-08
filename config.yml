@@ -61,3 +61,7 @@
 #   access_key: ''
 #   secret_key: ''
 #   bucket_name: ''
+
+# Add a system-wide rate limit of 200 events/minute
+# https://docs.sentry.io/server/throttling/
+system.rate-limit: 200
