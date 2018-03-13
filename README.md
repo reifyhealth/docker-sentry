@@ -67,7 +67,7 @@ git config
 git push
 
 ```
-git push aptible-test local-dev-branch-name:master
+git push aptible-test $(git rev-parse --abbrev-ref HEAD):master
 ```
 
 ## Debugging
