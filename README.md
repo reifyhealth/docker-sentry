@@ -56,8 +56,24 @@ Setting this up requires setting the following env vars.
 * Create a test stack on aptible
 * push to sentry-test branch on aptible
 
+git config
+
+```
+[remote "aptible-test"]
+	url = git@beta.aptible.com:reify-production/sentry-test.git
+	fetch = +refs/heads/*:refs/remotes/aptible-test/*
+```
+
+git push
+
+```
+git push aptible-test local-dev-branch-name:master
+```
+
 ## Debugging
 
 * Aptible SSH
 * Aptible logs
 * Where to look
+
+npm install -g @sentry/cli

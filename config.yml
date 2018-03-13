@@ -64,4 +64,4 @@
 
 # Add a system-wide rate limit of 200 events/minute
 # https://docs.sentry.io/server/throttling/
-system.rate-limit: 200
+system.rate-limit: 10

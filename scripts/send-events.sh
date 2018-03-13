@@ -17,8 +17,8 @@ sentry_config=$(aptible config --app $sentry_app_handle)
 sentry_host=$(echo "$sentry_config" | grep "SENTRY_URL_PREFIX" | awk -F"//" '{print $NF}')
 
 export SENTRY_DSN="https://$SENTRY_PUBLIC_KEY:$SENTRY_PRIVATE_KEY@$sentry_host/$SENTRY_PROJECT_ID"
-echo $SENTRY_DSN
 
-for i in $0; do
-  sentry-cli send-event -m "a failure"
+echo "Sending $1 events"
+for i in $(seq 1 $1); do
+  echo $(sentry-cli send-event -m "a failure") $i;
 done
