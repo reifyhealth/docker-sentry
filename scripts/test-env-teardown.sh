@@ -1,5 +1,8 @@
 #!/bin/bash
-# Dispose of dbs and spin down sentry-test app
+#
+# * Disposes of postgres and redis sandbox dbs
+# * Turns off the web, cron, and worker services for sentry-test
+# * Removes the https web endpoint
 
 sentry_app_handle=sentry-test
 

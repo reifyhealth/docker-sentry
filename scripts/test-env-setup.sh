@@ -1,9 +1,11 @@
 #!/bin/bash
 # 
 # Creates a test stack for sentry:
-# creates a new redis db,
-# clones the prod sentry db,
-# and configures the sentry test app to use them
+# * creates a new redis db
+# * clones the prod sentry db
+# * configures the sentry test app to use those dbs
+# * starts sentry _workers_
+# * creates an https _endpoint_
 
 sentry_app_handle=sentry-test
 
@@ -56,3 +58,5 @@ aptible endpoints:https:create \
         --app sentry-test \
         --default-domain \
         web
+
+echo "Sandbox created. Sentry available at https://app-8829.on-aptible.com/"
