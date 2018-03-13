@@ -1,4 +1,4 @@
-# #!/bin/bash
+#!/bin/bash
 # 
 # Creates a test stack for sentry:
 # creates a new redis db,
@@ -50,3 +50,9 @@ aptible config:set --app $sentry_app_handle \
 
 ## spin up sentry
 $PROJECT_ROOT/scripts/test-env-scale-sentry-services.sh 1
+
+# create endpoint
+aptible endpoints:https:create \
+        --app sentry-test \
+        --default-domain \
+        web

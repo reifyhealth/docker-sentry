@@ -53,5 +53,11 @@ Setting this up requires setting the following env vars.
 
 ## Testing docker image
 
-TBD
+* Create a test stack on aptible
+* push to sentry-test branch on aptible
 
+## Debugging
+
+* Aptible SSH
+* Aptible logs
+* Where to look
