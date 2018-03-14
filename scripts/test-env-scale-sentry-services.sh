@@ -1,4 +1,6 @@
 #!/bin/bash
+# Scales up/down services needed for sentry
+
 
 sentry_app_handle=sentry-test
 container_count=$1

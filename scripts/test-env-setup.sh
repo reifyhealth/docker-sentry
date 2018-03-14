@@ -4,7 +4,7 @@
 # * creates a new redis db
 # * clones the prod sentry db
 # * configures the sentry test app to use those dbs
-# * starts sentry _workers_
+# * starts sentry _services_
 # * creates an https _endpoint_
 
 sentry_app_handle=sentry-test

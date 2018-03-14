@@ -28,6 +28,5 @@ done
 
 export SENTRY_DSN=$sentry_dsn
 for i in $(seq 1 $messages); do
-  # use env -i so that it won't send your local env vars
   echo $(sentry-cli send-event -m "a failure") $i;
 done

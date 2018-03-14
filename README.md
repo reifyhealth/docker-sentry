@@ -111,14 +111,17 @@ To send test events, run:
 ./scripts/send-events.sh NUMBER_OF_EVENTS
 ```
 
-where `NUMBER_OF_EVENTS` is an integer.
+where `NUMBER_OF_EVENTS` is an integer. You must
+have [`sentry-cli`](https://github.com/getsentry/sentry-cli)
+installed, and you can install it with
+
+```
+npm install -g @sentry/cli
+```
 
 ### Debugging
 
-* Aptible SSH
-    * `sentry config list`
-* Aptible logs
-* Where to look
-
-
-npm install -g @sentry/cli
+If you make changes to sentry's config, you can check whether they're
+live by using `aptible ssh --app sentry-test` to log in to the sentry
+container, then use `sentry config` and related commands to get sentry
+config values.
