@@ -63,6 +63,15 @@ directory has tools that allow you to:
 
 To use these tools you must have the latest aptible-cli installed.
 
+**WARNING**
+
+The scripts are not especially user friendly: the tasks are not run as
+a transaction, so if there's a failure midway through it's up to you
+to fix it.
+
+Additionally, the tasks run on the production environment and work
+with **databases that contain PHI**. Exercise caution!
+
 ### Set up a sandbox environment
 
 To set up a sandbox environment, run:
