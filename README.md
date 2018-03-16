@@ -51,7 +51,86 @@ Setting this up requires setting the following env vars.
 
 `requirements.txt` define the list of Sentry add-ons.
 
-## Testing docker image
+## Testing Sentry in a Sandbox
 
-TBD
+When you want to test changes to a configuration file, send a bunch of
+test events, or otherwise exercise Sentry in a non-production way, the
+preferred approach is to create a Sentry sandbox. The `scripts`
+directory has tools that allow you to:
 
+* Set up and teardown a sandbox environment
+* Send dummy events
+
+To use these tools you must have the latest aptible-cli installed.
+
+**WARNING**
+
+The scripts are not especially user friendly: the tasks are not run as
+a transaction, so if there's a failure midway through it's up to you
+to fix it.
+
+Additionally, the tasks run on the production environment and work
+with **databases that contain PHI**. Exercise caution!
+
+### Set up a sandbox environment
+
+To set up a sandbox environment, run:
+
+```
+./scripts/test-env-setup.sh
+```
+
+See the script for more details.
+
+### Teardown sandbox environment
+
+To tear down a sandbox environment, run:
+
+```
+./scripts/test-env-teardown.sh
+```
+
+See the script for more details.
+
+### Deploy to sandbox environment
+
+Aptible automatically deploys a project whenever it receives a git
+push. The following config works for the sentry sandbox application
+named `sentry-test`.
+
+Add this to your git config:
+
+```
+[remote "aptible-test"]
+	url = git@beta.aptible.com:reify-production/sentry-test.git
+	fetch = +refs/heads/*:refs/remotes/aptible-test/*
+```
+
+Push changes from your local development branch to deploy them:
+
+```
+git push aptible-test $(git rev-parse --abbrev-ref HEAD):master
+```
+
+### Send test events
+
+To send test events, run:
+
+```
+./scripts/send-events.sh NUMBER_OF_EVENTS
+```
+
+where `NUMBER_OF_EVENTS` is an integer. You must
+have [`sentry-cli`](https://github.com/getsentry/sentry-cli)
+installed, and you can install it with
+
+```
+npm install -g @sentry/cli
+```
+
+### Debugging
+
+If you make changes to sentry's config, you can check whether they're
+live by using `aptible ssh --app sentry-test` to log in to the sentry
+container, then use `sentry config` and related commands to get sentry
+config values.
