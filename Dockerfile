@@ -84,6 +84,9 @@ COPY config.yml /etc/sentry/
 
 COPY docker-entrypoint.sh /entrypoint.sh
 
+COPY requirements.txt /tmp/requirements.txt
+RUN pip install -r requirements.txt
+
 EXPOSE 9000
 
 VOLUME /var/lib/sentry/files

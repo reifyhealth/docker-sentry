@@ -68,7 +68,7 @@ s3transfer==0.1.13
 selenium==3.4.3
 sentry==8.20.0
 sentry-plugins==8.20.0
-sentry-slack~=0.5.0
+#sentry-slack~=0.5.0 # this was here but never applied
 setproctitle==1.1.10
 simplejson==3.8.2
 six==1.10.0
