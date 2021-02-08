@@ -25,7 +25,7 @@ exam==0.10.6
 futures==3.3.0
 hiredis==0.1.6
 honcho==0.7.1
-httplib2==0.18.1
+httplib2==0.19.0
 idna==2.9
 ipaddress==1.0.23
 jmespath==0.10.0
