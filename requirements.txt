@@ -40,7 +40,7 @@ oauth2==1.9.0.post1
 oauthlib==3.1.0
 percy==2.0.2
 petname==2.0
-Pillow==3.2.0
+Pillow==8.1.1
 progressbar2==3.10.1
 psycopg2==2.6.2
 py==1.8.1
