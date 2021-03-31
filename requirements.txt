@@ -33,7 +33,7 @@ kombu==3.0.35
 librabbitmq==1.6.1
 libsourcemap==0.7.2
 loremipsum==1.0.5
-lxml==4.5.1
+lxml==4.6.3
 mmh3==2.3.1
 mock==1.0.1
 oauth2==1.9.0.post1
