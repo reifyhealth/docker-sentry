@@ -43,7 +43,7 @@ petname==2.0
 Pillow==3.2.0
 progressbar2==3.10.1
 psycopg2==2.6.2
-py==1.8.1
+py==1.10.0
 pycparser==2.20
 PyJWT==1.7.1
 pyOpenSSL==19.1.0
